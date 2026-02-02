@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>QMET – Media</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link href="css/variables.css" rel="stylesheet"/>
+  <link href="css/base.css" rel="stylesheet"/>
+  <link href="css/layout.css" rel="stylesheet"/>
+  <link href="css/components.css" rel="stylesheet"/>
+  <link href="css/overlay.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+  <link href="css/media.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="grain"></div>
+
+  <header>
+    <a class="logo" href="index.html">QMET</a>
+    <nav>
+      <a href="./about.html">About</a>
+      <a href="./professor.html">Professor</a>
+      <a href="./team.html">Members</a>
+      <a href="./publications.html">Publication</a>
+      <a href="./activity.html">Activity</a>
+      <a href="./media.html">Media</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button aria-label="Toggle menu" class="menu-toggle">Menu</button>
+  </header>
+
+  <main id="page-root" style="padding: 8rem 3rem 4rem; max-width: 1200px; margin: 0 auto;">
+    <div class="overlay-header">
+      <h1 class="overlay-title"><em>Media</em></h1>
+      <p class="overlay-subtitle">
+        Press coverage, video features, and YouTube content related to our research and outreach.
+      </p>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="media-toolbar" aria-label="Media controls">
+      <div class="media-filters" role="tablist" aria-label="Filters">
+        <div class="chip active" data-filter="all" role="tab" aria-selected="true">All</div>
+        <div class="chip" data-filter="news" role="tab" aria-selected="false">News</div>
+        <div class="chip" data-filter="youtube" role="tab" aria-selected="false">YouTube</div>
+        <div class="chip" data-filter="video" role="tab" aria-selected="false">News Video</div>
+      </div>
+
+      <div class="media-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M21 21l-4.3-4.3"></path>
+        </svg>
+        <input id="mediaSearch" type="search" placeholder="Search title, outlet, keywords..." aria-label="Search media"/>
+      </div>
+
+      <div class="media-sort">
+        <select id="mediaSort" aria-label="Sort media">
+          <option value="date_desc">Newest</option>
+          <option value="date_asc">Oldest</option>
+          <option value="title_asc">Title A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- List -->
+    <div class="media-list" id="mediaList">
+      <!--
+        ✅ 카드 추가 방법:
+        - data-type: news | youtube | video
+        - data-date: YYYY-MM-DD (정렬용)
+        - data-title / data-outlet / data-keywords: 검색용
+        - data-url: 기사 링크(또는 유튜브 링크)
+        - data-embed: 유튜브 임베드 URL (예: https://www.youtube.com/embed/VIDEO_ID)
+      -->
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-12-09"
+        data-title="충북대·구루미, 국내 최초 '클라우드 기반 퀀텀AI 스쿨' 구축"
+        data-outlet="아주경제"
+        data-keywords="퀀텀AI 스쿨 클라우드 양자컴퓨터 교육 플랫폼 충북양자연구센터"
+        data-url="https://m.news.nate.com/view/20251209n29434"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://imgnews.pstatic.net/image/092/2025/12/09/0002401654_002_20251209152215882.png?type=w860" alt="AI School"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-12-09</span>
+              <span>아주경제</span>
+            </div>
+
+            <h2 class="media-title">충북대·구루미, 국내 최초 '클라우드 기반 퀀텀AI 스쿨' 구축</h2>
+            <p class="media-desc">
+              초·중·고부터 대학생·산업체 연구자까지 누구나 실제 양자컴퓨터를 써볼 수 있는 교육 플랫폼이 국내 최초로 만들어진다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://zdnet.co.kr/view/?no=20251001153110" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-12-09"
+        data-title="충북대 양자연구센터-구루미, '퀀텀AI 스쿨' 협력"
+        data-outlet="ZDNet Korea"
+        data-keywords="양자컴퓨팅 클라우드 교육 플랫폼 퀀텀AI 충북대"
+        data-url="https://n.news.naver.com/article/092/0002401654?sid=105"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://imgnews.pstatic.net/image/092/2025/12/09/0002401654_001_20251209152215829.jpg?type=w860" alt="AI School"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-12-09</span>
+              <span>ZDNet Korea</span>
+            </div>
+
+            <h2 class="media-title">충북대 양자연구센터-구루미, '퀀텀AI 스쿨' 협력</h2>
+            <p class="media-desc">
+              충북대학교(총장 고창섭) 충북양자연구센터(센터장 김기웅)와 AI 기반 교육 플랫폼 전문기업 구루미(대표 이랑혁)가 미래 핵심 기술인 퀀텀 컴퓨팅과 AI 분야 전문 인재를 체계적으로 양성하기 위한 ‘클라우드 기반 충북 퀀텀AI 스쿨(가칭)’ 구축 사업에 협력한다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://n.news.naver.com/article/092/0002401654?sid=105" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>      
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-10-25"
+        data-title="충북도, 양자산업 선두주자로 도약: 인프라 확충과 인재 양성 가속화"
+        data-outlet="브릿지경제"
+        data-keywords="충북도 양자산업 충북양자연구센터 IQM 양자컴퓨터 인프라 인재양성"
+        data-url="https://www.viva100.com/article/20251025500134"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://stqnq5ux4599.edge.naverncp.com/data2/content/image/2025/10/25/.cache/512/20251025500132.jpg" alt="충북도 양자산업 관련 보도 이미지"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-10-25</span>
+              <span>브릿지경제</span>
+            </div>
+
+            <h2 class="media-title">충북도, 양자산업 선두주자로 도약: 인프라 확충과 인재 양성 가속화</h2>
+            <p class="media-desc">
+              이복원 경제부지사, 충북양자연구센터 방문 및 현황 점검<br>
+              양자기술 연구 인프라와 인재 양성 위한 다각적 지원 추진<br>
+              2026년까지 양자기업 유치 및 제조업 전환 지원 계획   
+            </p>
+
+            <div class="media-links">
+              <a href="https://www.viva100.com/article/20251025500134" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-10-26"
+        data-title="충북 육성 양자산업 - 방사광 연계 필요"
+        data-outlet="충청타임즈"
+        data-keywords="이복원 경제부지사 충북양자연구센터 양자기술 인프라 인재양성 정책"
+        data-url="https://v.daum.net/v/20251026200234073"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://img4.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202510/26/551723-UbcXKS4/20251026200235189pjvp.jpg" alt="충북도 양자산업 관련 보도 이미지"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-10-26</span>
+              <span>충청타임즈</span>
+            </div>
+
+            <h2 class="media-title">충북 육성 양자산업 - 방사광 연계 필요</h2>
+            <p class="media-desc">
+              이복원 경제부지사 연구센터 방문 … 발전방향 논의<br>
+              양자산업 경쟁력 확보 정부차원 관심·지원 건의도<br>
+              李 “R&D·인프라 확충·전문인력양성 전방위 투자”  
+            </p>
+
+            <div class="media-links">
+              <a href="https://v.daum.net/v/20251026200234073" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>      
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-10-08"
+        data-title="[기고] 양자물리, 관점이 현실로…"
+        data-outlet="ZDNet Korea"
+        data-keywords="기고 칼럼 양자물리 양자역학 노벨 물리학상 초전도 SQUID 조셉슨 큐비트"
+        data-url="https://zdnet.co.kr/view/?no=20251008122521"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://image.zdnet.co.kr/2025/10/08/6ed4ba435372443dd4845d5c9faaf8ec.jpg" alt="양자 물리 기고"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-10-08</span>
+              <span>ZDNet Korea</span>
+            </div>
+
+            <h2 class="media-title">[기고] 양자물리, 관점이 현실로…</h2>
+            <p class="media-desc">
+              2025 노벨 물리학상 들여다보니…"표준연 근무시절 수상자 클라크 교수와 버클리대서 협력 연구도"
+            </p>
+
+            <div class="media-links">
+              <a href="https://zdnet.co.kr/view/?no=20251008122521" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-09-30"
+        data-title="&quot;양자 산업화 위해 오창 방사광가속기 빔라인 2기만 달라&quot;"
+        data-outlet="ZDNet Korea"
+        data-keywords="양자 산업화, 오창 방사광가속기, 빔라인, 양자기술, 연구 인프라"
+        data-url="https://zdnet.co.kr/view/?no=20250930124055#_DYAD"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://image.zdnet.co.kr/2025/09/30/4ce6ad25ee872767c5455aadc37f4e59-watermark.jpg" alt="오창 방사광가속기 빔라인"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-09-30</span>
+              <span>ZDNet Korea</span>
+            </div>
+
+            <h2 class="media-title">"양자 산업화 위해 오창 방사광가속기 빔라인 2기만 달라"</h2>
+            <p class="media-desc">
+              [AI페스타]30일 퀀텀포럼2025서 김기웅 충북양자연구센터장 호소...퀀텀인텔리전스는 인력 양성 주문
+            </p>
+
+            <div class="media-links">
+              <a href="https://zdnet.co.kr/view/?no=20250930124055#_DYAD" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>      
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-10-01"
+        data-title="SDT, 오는 12월 강남에 20큐비트 규모 양자컴퓨터 구축"
+        data-outlet="ZDNet Korea"
+        data-keywords="AI FESTA, 양자컴퓨팅, 양자 알고리즘, IQM Spark, 양자컴퓨터"
+        data-url="https://zdnet.co.kr/view/?no=20251001153110"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://image.zdnet.co.kr/2025/10/01/3e56203a6aec774cdf47165d3f2cf78f-watermark.jpg" alt="AI FESTA"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-10-01</span>
+              <span>ZDNet Korea</span>
+            </div>
+
+            <h2 class="media-title">SDT, 오는 12월 강남에 20큐비트 규모 양자컴퓨터 구축</h2>
+            <p class="media-desc">
+              또 충북양자연구센터는 양자기술 육성과 인력 양성을 기치로 올 2월부터 양자컴퓨터를 운영 중이다. 
+              국책사업 기획과 출연연 공모 사업 발굴 및 유치, 양자 물질·소자 원천기술 연구, 지역전략산업 연계 산업화 촉진 등이 핵심 사업이다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://zdnet.co.kr/view/?no=20251001153110" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-08-25"
+        data-title="고교생이 짠 양자알고리즘, '국내 유이' 충북대 양자컴으로 검증"
+        data-outlet="동아사이언스"
+        data-keywords="양자컴퓨터 양자 알고리즘 VQE 하이브리드 알고리즘 양자인재 육성 고등학생 AI 학습 IQM Spark"
+        data-url="https://v.daum.net/v/20250825101537171"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://img3.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202508/25/dongascience/20250825101543415vhnc.jpg" alt="고교생"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-08-25</span>
+              <span>동아사이언스</span>
+            </div>
+
+            <h2 class="media-title">고교생이 짠 양자알고리즘, '국내 유이' 충북대 양자컴으로 검증</h2>
+            <p class="media-desc">
+              "지역 고등학생이 최근 최신 양자 알고리즘을 전부 챗GPT로 긁어모아서 마치 칵테일 만들듯 
+              이론을 짜서 가져왔어요. 전문가들이 봤더니 '검증해볼 만 하겠다' 정도로 석박사 학생들 
+              수준의 논리를 가져온 겁니다. 실제 양자컴퓨터로 한번 검증해 보면 어떠냐고 제안했습니다."
+            </p>
+
+            <div class="media-links">
+              <a href="https://v.daum.net/v/20250825101537171" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2025-07-16"
+        data-title="양자컴 실물 영접한 미래 양자 인재들 &quot;기술 발전 실감&quot;"
+        data-outlet="동아사이언스"
+        data-keywords="양자컴퓨터 양자 알고리즘 GHZ 상태 양자 실습 양자컴퓨팅 교육 대학생 코딩 실습"
+        data-url="https://m.dongascience.com/ko/news/72826"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://image.dongascience.com/Photo/2025/07/02e99031fec001283ebbc4286dae592d.jpg" alt="IQM 세미나 인 서울"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2025-07-16</span>
+              <span>동아사이언스</span>
+            </div>
+
+            <h2 class="media-title">양자컴 실물 영접한 미래 양자 인재들 "기술 발전 실감"</h2>
+            <p class="media-desc">
+              10일 오후 서울대 자연과학관 1층 강당은 학생들이 '코딩'에 열중하며 키보드를 두드리는 소리로 가득 찼다. 
+              미래 기술로 주목받는 양자컴퓨터를 실제로 구동해 문제를 푸는 '양자 알고리즘'을 짜는 것이다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://m.dongascience.com/ko/news/72826" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="news"
+        data-date="2024-12-03"
+        data-title="충북대, 국내 최초 상업용 양자컴퓨터 도입… 양자 기술 교육·연구 '날개 단다'"
+        data-outlet="양자신문"
+        data-keywords="충북대학교 양자컴퓨터 상업용 양자컴퓨터 IQM Spark 양자기술 연구 양자컴퓨팅 교육 양자인재 육성"
+        data-url="https://www.quantumtimes.net/news/articleView.html?idxno=54513"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://cdn.quantumtimes.net/news/photo/202412/54513_76394_511.jpg" alt="IQM Spark"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2024-12-03</span>
+              <span>양자신문</span>
+            </div>
+
+            <h2 class="media-title">충북대, 국내 최초 상업용 양자컴퓨터 도입… 양자 기술 교육·연구 '날개 단다'</h2>
+            <p class="media-desc">
+              충북대학교가 국내 대학 최초로 상업용 양자컴퓨터를 도입하며 양자 기술 연구와 교육에 박차를 가한다. 
+              핀란드 양자 컴퓨팅 기업 아이큐엠 퀀텀 컴퓨터(IQM Quantum Computers)는 지난 2일(현지시간), 
+              충북대학교에 5큐빗 풀스택 양자컴퓨터 '아이큐엠 스파크(IQM Spark)'를 공급한다고 공식 발표했다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://www.quantumtimes.net/news/articleView.html?idxno=54513" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>      
+      
+      <article class="media-card"
+        data-type="news"
+        data-date="2024-07-03"
+        data-title="충북대, ITRC 선정 국비 37.5억원 확보"
+        data-outlet="충북일보"
+        data-keywords="충북대학교 ITRC 대학ICT연구센터 양자기술 플랫폼 양자물질 소자 이미징 양자인력 양성 양자 산업화"
+        data-url="https://www.inews365.com/mobile/article.html?no=821638"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://www.inews365.com/data/photos/20240727/art_17199939491421.jpg" alt="충북대학교"/>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News</span>
+              <span>2024-07-03</span>
+              <span>충북일보</span>
+            </div>
+
+            <h2 class="media-title">충북대, ITRC 선정 국비 37.5억원 확보</h2>
+            <p class="media-desc">
+              충북대학교가 '2024년 대학ICT연구센터육성지원사업(ITRC)'에 최종 선정됐다.
+            </p>
+
+            <div class="media-links">
+              <a href="https://www.inews365.com/mobile/article.html?no=821638" target="_blank" rel="noopener">Open article →</a>
+            </div>
+          </div>
+        </div>
+      </article>          
+      
+      <!-- Example 2: YouTube (embed) -->
+      <article class="media-card"
+        data-type="youtube"
+        data-date="2025-04-07"
+        data-title="김기웅 교수(충북대 물리학과) [구본상의 '허심탄회'] (1부)"
+        data-outlet="YouTube"
+        data-keywords="김기웅 물리학과 구본상 허심탄회"
+        data-url="https://www.youtube.com/watch?v=d__TomGulHQ"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <!-- 유튜브는 썸네일을 직접 넣어도 되고, 아래 JS가 자동 썸네일로 채워도 됨 -->
+            <img src="https://i.ytimg.com/vi/d__TomGulHQ/hq720.jpg" alt="YouTube thumbnail"/>
+            <span class="play-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              Play
+            </span>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">YouTube</span>
+              <span>2025-04-14</span>
+              <span>YouTube</span>
+            </div>
+
+            <h2 class="media-title">김기웅 교수(충북대 물리학과) [구본상의 '허심탄회'] (1부)</h2>
+
+            <div class="media-links">
+              <a href="https://www.youtube.com/watch?v=d__TomGulHQ" target="_blank" rel="noopener">Open on YouTube →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="youtube"
+        data-date="2025-04-14"
+        data-title="김기웅 교수(충북대 물리학과) [구본상의 '허심탄회'] (2부)"
+        data-outlet="YouTube"
+        data-keywords="김기웅 물리학과 구본상 허심탄회"
+        data-url="https://www.youtube.com/watch?v=_SjME6L2fkY"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <!-- 유튜브는 썸네일을 직접 넣어도 되고, 아래 JS가 자동 썸네일로 채워도 됨 -->
+            <img src="https://i.ytimg.com/vi/_SjME6L2fkY/hq720.jpg" alt="YouTube thumbnail"/>
+            <span class="play-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              Play
+            </span>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">YouTube</span>
+              <span>2025-04-14</span>
+              <span>YouTube</span>
+            </div>
+
+            <h2 class="media-title">김기웅 교수(충북대 물리학과) [구본상의 '허심탄회'] (2부)</h2>
+
+            <div class="media-links">
+              <a href="https://www.youtube.com/watch?v=_SjME6L2fkY" target="_blank" rel="noopener">Open on YouTube →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card"
+        data-type="youtube"
+        data-date="2025-07-19"
+        data-title="[프라임인터뷰] 충북양자연구센터장 김기웅 교수"
+        data-outlet="YouTube"
+        data-keywords="김기웅 물리학과 프라임인터뷰 충북양자연구센터장"
+        data-url="https://www.youtube.com/watch?v=taH2Hjz4A4A"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <!-- 유튜브는 썸네일을 직접 넣어도 되고, 아래 JS가 자동 썸네일로 채워도 됨 -->
+            <img src="https://img.youtube.com/vi/taH2Hjz4A4A/mqdefault.jpg" alt="YouTube thumbnail"/>
+            <span class="play-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              Play
+            </span>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">YouTube</span>
+              <span>2025-07-19</span>
+              <span>YouTube</span>
+            </div>
+
+            <h2 class="media-title">[프라임인터뷰] 충북양자연구센터장 김기웅 교수</h2>
+
+            <div class="media-links">
+              <a href="https://www.youtube.com/watch?v=taH2Hjz4A4A" target="_blank" rel="noopener">Open on YouTube →</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Example 3: News Video (embed 가능: 유튜브/플랫폼 임베드 URL이면 OK) -->
+      <article class="media-card"
+        data-type="video"
+        data-date="2025-03-30"
+        data-title="양자컴퓨터 본격 활용..공동 연구 진행"
+        data-outlet="MBC충북NEWS"
+        data-keywords="충북대학교 양자컴퓨터 상업용 양자컴퓨터 충북양자연구센터 양자 알고리즘 양자컴퓨팅 교육 공동 연구 양자산업"
+        data-url="https://www.youtube.com/watch?v=nVqtZxC14LA"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://img.youtube.com/vi/nVqtZxC14LA/mqdefault.jpg" alt="News video thumbnail"/>
+            <span class="play-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              Play
+            </span>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News Video</span>
+              <span>2025-03-30</span>
+              <span>MBC충북NEWS</span>
+            </div>
+
+            <h2 class="media-title">양자컴퓨터 본격 활용..공동 연구 진행</h2>
+            <p class="media-desc">
+              충북대학교에 설치된 상업용 양자컴퓨터가
+              서버 구축과 보안 작업을 마치고
+              본격적인 활용 단계에 들어갔다.<br>
+              연구진은 교육 프로그램과 양자 알고리즘 개발을
+              진행 중이며, 국내 대학·기업과의
+              공동 연구 문의도 이어지고 있다.
+            </p>
+            <div class="media-links">
+              <a href="https://www.youtube.com/watch?v=nVqtZxC14LA" target="_blank" rel="noopener">Open source page →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="media-embed">
+          <iframe
+            title="News video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            src="">
+          </iframe>
+        </div>
+      </article>
+      
+      <article class="media-card"
+        data-type="video"
+        data-date="2025-08-13"
+        data-title="'빨라진 기술, 늦어진 준공'.. 추가 빔 구축 검토"
+        data-outlet="MBC충북NEWS"
+        data-keywords="충북대학교 양자컴퓨터 상업용 양자컴퓨터 충북양자연구센터 양자 알고리즘 양자컴퓨팅 교육 공동 연구 양자산업"
+        data-url="https://www.youtube.com/watch?v=bgfud1d_hlk"
+      >
+        <div class="media-card-inner">
+          <div class="media-thumb" aria-hidden="true">
+            <img src="https://img.youtube.com/vi/bgfud1d_hlk/mqdefault.jpg" alt="News video thumbnail"/>
+            <span class="play-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              Play
+            </span>
+          </div>
+
+          <div class="media-meta">
+            <div class="media-topline">
+              <span class="media-badge">News Video</span>
+              <span>2025-08-13</span>
+              <span>MBC충북NEWS</span>
+            </div>
+
+            <h2 class="media-title">'빨라진 기술, 늦어진 준공'.. 추가 빔 구축 검토</h2>
+            <p class="media-desc">
+              오창 다목적 방사광가속기 착공을 앞두고
+              AI와 양자기술 확산에 대응하기 위해
+              기존 설계보다 빔라인을 확대해야 한다는
+              요구가 제기되고 있다.<br>
+              충북도와 학계는 양자 전용 빔라인이
+              반도체·신약·이차전지 연구뿐 아니라
+              AI·양자 연구 인프라의 핵심이 될 것으로 보고,
+              정부에 기능 확대를 요청했다.
+            </p>
+            <div class="media-links">
+              <a href="https://www.youtube.com/watch?v=bgfud1d_hlk" target="_blank" rel="noopener">Open source page →</a>
+            </div>
+          </div>
+        </div>
+        
+
+        <div class="media-embed">
+          <iframe
+            title="News video"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            src="">
+          </iframe>
+        </div>
+      </article>
+
+    </div>
+    <nav class="pagination" aria-label="Media pagination">
+      <button class="page-btn" id="pagePrev" type="button" aria-label="Previous page">Prev</button>
+      <div class="page-numbers" id="pageNumbers" aria-label="Page numbers"></div>
+      <button class="page-btn" id="pageNext" type="button" aria-label="Next page">Next</button>
+    </nav>
+
+  </main>
+
+  <script src="js/menu.js"></script>
+  <script src="js/media.js"></script>
+
+</body>
+</html>

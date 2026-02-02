@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QMET – Contact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link href="css/variables.css" rel="stylesheet"/>
+  <link href="css/base.css" rel="stylesheet"/>
+  <link href="css/layout.css" rel="stylesheet"/>
+  <link href="css/components.css" rel="stylesheet"/>
+  <link href="css/overlay.css" rel="stylesheet"/>
+  <link href="css/animations.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="grain"></div>
+
+  <!-- Header (menu toggle 유지) -->
+  <header>
+    <a class="logo" href="index.html">QMET</a>
+    <nav>
+      <a href="./about.html">About</a>
+      <a href="./professor.html">Professor</a>
+      <a href="./team.html">Members</a>
+      <a href="./publications.html">Publication</a>
+      <a href="./activity.html">Activity</a>
+      <a href="./media.html">Media</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Toggle menu">Menu</button>
+  </header>
+
+  <!-- Contact page (overlay 스타일을 페이지 레이아웃으로 사용) -->
+  <main class="overlay-content" id="main-content" style="justify-content:flex-start;">
+    <div class="overlay-header">
+      <h1 class="overlay-title"><em>Contact</em></h1>
+      <p class="overlay-subtitle">
+        Interested in our research or collaboration opportunities?
+        We'd love to hear from you.
+      </p>
+    </div>
+
+    <div class="overlay-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="contact-block">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:kiwoong@cbnu.ac.kr">kiwoong@cbnu.ac.kr</a>
+          </p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Tel.</h3>
+          <p>
+            <a href="tel:+82432612277">+82 043-261-2277</a>
+          </p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Location</h3>
+          <address>
+            <a href="https://maps.google.com/maps?q=Chungbuk+National+University"
+               target="_blank" rel="noopener">
+              Room 249, Building S1-1<br>
+              College of Natural Sciences<br>
+              Chungbuk National University<br>
+              1, Chungdae-ro, Seowon-gu<br>
+              Cheongju-si, Chungbuk 28644<br>
+              South Korea
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form" onsubmit="sendMail(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text"
+                 placeholder="Research inquiry, Collaboration, etc.">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"
+                    placeholder="Tell us about your inquiry..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <!-- scripts -->
+  <script src="js/partials.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+    function sendMail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value || 'Contact from QMET website';
+      const message = document.getElementById('message').value;
+
+      const body =
+        'Name: ' + name + '\n' +
+        'Email: ' + email + '\n\n' +
+        message;
+
+      const mailto =
+        'mailto:kiwoong@cbnu.ac.kr' +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    }
+  </script>
+  
+</body>
+</html>

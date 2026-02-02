@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>QMET – Research</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link href="css/variables.css" rel="stylesheet"/>
+  <link href="css/base.css" rel="stylesheet"/>
+  <link href="css/layout.css" rel="stylesheet"/>
+  <link href="css/components.css" rel="stylesheet"/>
+  <link href="css/overlay.css" rel="stylesheet"/>
+  <link href="css/lightbox.css" rel="stylesheet"/>
+  <link href="css/animations.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="grain"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="lightbox" id="imageLightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="1" y1="1" x2="13" y2="13"></line>
+        <line x1="13" y1="1" x2="1" y2="13"></line>
+      </svg>
+    </button>
+
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 6 15 12 9 18"></polyline>
+      </svg>
+    </button>
+
+    <div class="lightbox-content">
+      <img src="" alt="" id="lightboxImage"/>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <header>
+    <a class="logo" href="index.html">QMET</a>
+    <nav>
+      <a href="./about.html">About</a>
+      <a href="./professor.html">Professor</a>
+      <a href="./team.html">Members</a>
+      <a href="./publications.html">Publication</a>
+      <a href="./activity.html">Activity</a>
+      <a href="./media.html">Media</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button aria-label="Toggle menu" class="menu-toggle">Menu</button>
+  </header>
+
+  <main id="main-content" class="overlay-content">
+    <div class="overlay-header">
+      <h1 class="overlay-title"><em>Research</em></h1>
+      <p class="overlay-subtitle">
+        Advancing quantum sensing technologies and quantum computing algorithms.
+      </p>
+    </div>
+
+    <div class="research-areas">
+      <!-- 1) NV -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/NV_1.png"
+                 alt="NV Center Magnetometry Setup" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs">
+            <img src="./image/research/NV_2.jpg"
+                 alt="NV Center Sensing" data-lightbox/>
+            <img src="./image/research/NV_3.png"
+                 alt="NV Center Structure" data-lightbox/>
+          </div>
+        </div>
+        <h4>NV Center Magnetometry</h4>
+        <p>
+          Development of magnetic field sensors using nitrogen-vacancy centers in diamond.
+          These solid-state quantum sensors enable high-resolution magnetometry at room
+          temperature with nanoscale spatial resolution.
+        </p>
+      </div>
+
+      <!-- 2) Rydberg -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/RE_1.jpg"
+                 alt="Rydberg Atom Setup" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs">
+            <img src="./image/research/RE_2.jpg"
+                 alt="Rydberg Atom Setup" data-lightbox/>
+            <img src="./image/research/RE_3.jpg"
+                 alt="Rydberg Atom Diagram" data-lightbox/>
+            <img src="./image/research/RE_4.png"
+                 alt="Rydberg Atom Diagram" data-lightbox/>
+          </div>
+        </div>
+        <h4>Rydberg Atom Electric Field Sensing</h4>
+        <p>
+          Exploring Rydberg atoms as ultrasensitive electric field sensors.
+          Their extreme polarizability enables detection of low frequency fields with
+          unprecedented sensitivity and broad frequency coverage.
+        </p>
+      </div>
+
+      <!-- 3) Atomic Magnetometer -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/AM_1.png"
+                 alt="OPM MEG simulation" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs"></div>
+        </div>
+        <h4>Atomic Magnetometer for Brain Signals</h4>
+        <p>
+          Developing optically pumped magnetometers for magnetoencephalography (MEG).
+          These sensors measure the tiny magnetic fields produced by neural activity,
+          enabling non-invasive brain imaging without cryogenic cooling.
+        </p>
+      </div>
+
+      <!-- 4) Quantum Annealing -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/QA_1.png"
+                 alt="D-Wave Quantum Annealer" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs">
+            <img src="./image/research/QA_2.png"
+                 alt="D-Wave Quantum Annealer" data-lightbox/>
+            <img src="./image/research/QA_3.png"
+                 alt="D-Wave Quantum Annealer" data-lightbox/>
+          </div>
+        </div>
+        <h4>Quantum Annealing Algorithms</h4>
+        <p>
+          Implementing optimization algorithms on quantum annealing systems.
+          We explore applications in combinatorial optimization, machine learning,
+          and materials simulation using quantum adiabatic computation.
+        </p>
+      </div>
+
+      <!-- 5) Gate-based QC -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/QC_1.jpg"
+                 alt="IQM Spark Quantum Computer Algorithms" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs">
+            <img src="./image/research/QC_2.jpg"
+                 alt="IQM Spark" data-lightbox/>
+          </div>
+        </div>
+        <h4>Gate-Based Quantum Computing</h4>
+        <p>
+          Developing and testing quantum algorithms on superconducting quantum computers.
+          Our work spans variational algorithms, quantum error mitigation, and near-term
+          quantum applications.
+        </p>
+      </div>
+
+      <!-- 6) Instrumentation -->
+      <div class="research-card">
+        <div class="research-card-gallery">
+          <div class="gallery-main">
+            <img src="./image/research/LA_1.jpg"
+                 alt="Precision Mirror Mount System" data-lightbox/>
+          </div>
+          <div class="gallery-thumbs"></div>
+        </div>
+        <h4>Precision Instrumentation</h4>
+        <p>
+          Engineering advanced research tools including 5-axis mirror alignment systems.
+          This work develops automation and precision optics skills that bridge quantum
+          research and industrial applications.
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- scripts -->
+  <script src="js/partials.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

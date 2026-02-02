@@ -1,0 +1,23 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);
+  background:#000;               /* 전체 배경 완전 블랙 */
+  color:var(--color-text);
+  line-height:1.6;
+  font-weight:300;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;transition:opacity .3s ease}
+a:hover{opacity:.6}
+
+.skip-link{
+  position:absolute;top:-100%;left:0;
+  background:var(--color-text);
+  color:#000;
+  padding:1rem;z-index:1000;
+}
+.skip-link:focus{top:0}
+
+/* 페이지별 그레인 끄고 싶을 때 */
+body.no-grain .grain{display:none !important}

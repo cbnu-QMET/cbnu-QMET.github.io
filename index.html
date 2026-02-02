@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>QMET</title>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+
+  <link href="css/variables.css" rel="stylesheet"/>
+  <link href="css/base.css" rel="stylesheet"/>
+  <link href="css/layout.css" rel="stylesheet"/>
+  <link href="css/components.css" rel="stylesheet"/>
+  <link href="css/overlay.css" rel="stylesheet"/>
+  <link href="css/lightbox.css" rel="stylesheet"/>
+  <link href="css/animations.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+</head>
+
+<body>
+  <div class="grain"></div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="lightbox" id="imageLightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close lightbox">
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 14 14">
+        <line x1="1" x2="13" y1="1" y2="13"></line>
+        <line x1="13" x2="1" y1="1" y2="13"></line>
+      </svg>
+    </button>
+
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <polyline points="9 6 15 12 9 18"></polyline>
+      </svg>
+    </button>
+
+    <div class="lightbox-content">
+      <img alt="" id="lightboxImage" src=""/>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </div>
+
+  <!-- ==================== -->
+  <!-- HEADER               -->
+  <!-- ==================== -->
+  <header>
+    <a class="logo" href="index.html">QMET</a>
+    <nav>
+      <a href="./about.html">About</a>
+      <a href="./professor.html">Professor</a>
+      <a href="./team.html">Members</a>
+      <a href="./publications.html">Publication</a>
+      <a href="./activity.html">Activity</a>
+      <a href="./media.html">Media</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button aria-label="Toggle menu" class="menu-toggle">Menu</button>
+  </header>
+
+  <!-- ==================== -->
+  <!-- MAIN CONTENT         -->
+  <!-- ==================== -->
+  <main id="main-content">
+    <section class="hero">
+      <h1 class="hero-title">Beyond the Standard <em>Quantum</em> limit.</h1>
+      <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <section class="intro">
+      <div class="intro-content">
+        <p class="intro-text">
+          From quantum theory to engineered reality, quantum metrology laboratory transforms
+          invisible signals into clear insights - Designing the Hardware for Quantum Insight.
+        </p>
+
+        <!-- ✅ 변경: 버튼(overlay) → 링크(페이지 이동) -->
+        <a class="intro-link" href="./about.html">Inside the Lab</a>
+      </div>
+      <div></div>
+    </section>
+
+    <section class="values">
+      <div class="values-grid">
+        <h2 class="value-item">Theory.</h2>
+        <h2 class="value-item">Experiment.</h2>
+        <h2 class="value-item">Realization.</h2>
+      </div>
+
+      <p class="values-description">
+        Rooted in fundamental physics, we span the entire arc of discovery —
+        from theoretical modeling to the fabrication of fully integrated hardware modules.
+      </p>
+
+      <div class="values-cta">
+        <!-- ✅ 변경: 버튼(overlay) → 링크(페이지 이동)
+             layout.css에 .values-cta a 스타일이 이미 있어서 그대로 먹습니다. -->
+        <a href="./research.html">Explore our research →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== -->
+  <!-- FOOTER               -->
+  <!-- ==================== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-location">
+        <h3>Quantum metrology laboratory</h3>
+        <address>
+          <a href="https://maps.google.com/maps?q=Chungbuk+National+University" rel="noopener" target="_blank">
+            Room 249, Building S1-1 (College of Natural Sciences)<br/>
+            Chungbuk National University<br/>
+            1, Chungdae-ro, Seowon-gu<br/>
+            Cheongju-si, Chungbuk 28644<br/>
+            South Korea
+          </a>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>©2021. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="./contact.html">Contact</a>
+        <a href="/privacy">Hello</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script src="js/partials.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/overlay.js"></script>
+  <script src="js/lightbox.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/news.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

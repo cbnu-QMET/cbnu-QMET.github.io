@@ -1,0 +1,133 @@
+@media (max-width:1024px){
+  header{
+    padding:1.5rem 2rem;
+    mix-blend-mode:normal; /* 모바일에서는 difference 해제 */
+  }
+
+  /* 모바일 nav 패널 */
+  nav{
+    position:fixed;
+    top:70px;left:0;right:0;
+    flex-direction:column;
+    gap:0;
+    background:#000; /* 기본도 블랙 */
+    border-bottom:1px solid rgba(255,255,255,.1);
+    padding:2rem;
+    z-index:99;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-20px);
+    transition:opacity .3s ease, visibility .3s ease, transform .3s ease;
+  }
+
+  nav.mobile-open{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    background:#00000099;          /* 열릴 때도 블랙 확정 */
+    mix-blend-mode:normal;
+  }
+
+  nav a{padding:.75rem 0;font-size:1rem}
+
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
+
+  .hero{padding:0 2rem}
+  .hero-video{display:none}
+
+  .intro{grid-template-columns:1fr;padding:6rem 2rem}
+  .values{padding:6rem 2rem}
+  .values-grid{grid-template-columns:1fr;gap:1rem}
+
+  .footer-grid{grid-template-columns:1fr;gap:3rem}
+  footer{padding:4rem 2rem 2rem}
+  .footer-bottom{flex-direction:column;gap:1.5rem;text-align:center}
+
+  .team-grid{grid-template-columns:1fr}
+  .research-areas{grid-template-columns:1fr}
+}
+
+@media (max-width:768px){
+  .carousel-slide{flex:0 0 calc(50% - .5rem);min-width:calc(50% - .5rem)}
+  .carousel-slide img{height:150px}
+
+  .lightbox-nav{width:40px;height:40px}
+  .lightbox-prev{left:.75rem}
+  .lightbox-next{right:.75rem}
+  .gallery-thumbs img{width:40px;height:40px}
+}
+
+@media (max-width:640px){
+  .hero-title{font-size:clamp(2rem,10vw,5rem)}
+  .scroll-indicator{display:none}
+}
+
+@media (max-width:480px){
+  .carousel-slide{flex:0 0 100%;min-width:100%}
+}
+
+
+/* 태블릿 이하: 교수 헤더(사진+텍스트) 세로 정렬 + 2컬럼 → 1컬럼 */
+@media (max-width: 1024px){
+  .professor-header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .professor-photo{
+    width: 160px;
+    height: 160px;
+  }
+
+  /* 교수 페이지 본문 2단 → 1단 */
+  .overlay-grid{
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* 모바일: 여백/타이포 조금 더 컴팩트 */
+@media (max-width: 640px){
+  .overlay-content{
+    padding: 7rem 1.25rem 3rem;
+  }
+
+  .overlay-title{
+    font-size: clamp(2.25rem, 10vw, 3.75rem);
+  }
+
+  .overlay-subtitle{
+    font-size: 1rem;
+  }
+
+  .professor-photo{
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (max-width: 1024px){
+  nav{
+    display:none;
+  }
+  nav.mobile-open{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+
+    position:fixed;
+    left:0; right:0;
+
+    /* 핵심: 헤더 높이만큼 아래에서 시작 */
+    top: var(--header-h, 88px);
+
+    padding: 1.25rem 3rem 1.5rem;
+    background: #00000099;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    z-index: 90;
+  }
+
+  /* 선택: 배경 스크롤 방지 */
+  body.no-scroll{ overflow:hidden; }
+}
