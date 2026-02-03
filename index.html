@@ -1,13 +1,15 @@
-<script>
-  if (location.hostname === "qmet.cbnu.ac.kr") {
-    location.replace("https://qmet.chungbuk.ac.kr" + location.pathname);
-  }
-</script>
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
+
+  <script>
+    if (location.hostname === "qmet.cbnu.ac.kr") {
+      location.replace(
+        "https://qmet.chungbuk.ac.kr" + location.pathname + location.search + location.hash
+      );
+    }
+  </script>
+
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>QMET</title>
 
