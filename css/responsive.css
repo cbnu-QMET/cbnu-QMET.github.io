@@ -5,7 +5,7 @@
   }
 
   /* 모바일 nav 패널 */
-  nav{
+  header nav{
     position:fixed;
     top:70px;left:0;right:0;
     flex-direction:column;
@@ -21,7 +21,7 @@
     transition:opacity .3s ease, visibility .3s ease, transform .3s ease;
   }
 
-  nav.mobile-open{
+  header nav.mobile-open{
     opacity:1;
     visibility:visible;
     transform:translateY(0);
@@ -29,7 +29,7 @@
     mix-blend-mode:normal;
   }
 
-  nav a{padding:.75rem 0;font-size:1rem}
+  header nav a{padding:.75rem 0;font-size:1rem}
 
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
 
@@ -108,10 +108,10 @@
   }
 }
 @media (max-width: 1024px){
-  nav{
+  header nav{
     display:none;
   }
-  nav.mobile-open{
+  header nav.mobile-open{
     display:flex;
     flex-direction:column;
     gap:1rem;
