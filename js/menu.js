@@ -14,6 +14,7 @@
 
     const applyNavOffset = () => {
       const h = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--header-h', `${h}px`);
       nav.style.setProperty('--header-h', `${h}px`);
     };
 
