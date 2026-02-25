@@ -118,29 +118,6 @@
   <script src="js/carousel.js"></script>
   <script src="js/news.js"></script>
   <script src="js/main.js"></script>
-
-  <script>
-    function sendMail(event) {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value || 'Contact from QMET website';
-      const message = document.getElementById('message').value;
-
-      const body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        message;
-
-      const mailto =
-        'mailto:kiwoong@cbnu.ac.kr' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailto;
-    }
-  </script>
   
 </body>
 </html>
