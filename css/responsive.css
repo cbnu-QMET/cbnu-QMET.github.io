@@ -7,7 +7,7 @@
   /* 모바일 nav 패널 */
   header nav{
     position:fixed;
-    top:70px;left:0;right:0;
+    top: var(--header-h, 70px);left:0;right:0;
     flex-direction:column;
     gap:0;
     background:#000; /* 기본도 블랙 */
