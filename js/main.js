@@ -1,6 +1,4 @@
 // main.js - entrypoint
-// Centralized bootstrap so each module can stay page-safe (no-op when DOM is missing).
-
 (function () {
   const INIT_FNS = [
     'initPartials',
@@ -9,23 +7,18 @@
     'initLightbox',
     'initCarousel',
     'initNews',
-    'initEmailReveal', 
+    'initEmailReveal',
   ];
 
   function safeCall(fnName) {
     const fn = window[fnName];
     if (typeof fn !== 'function') return;
-    try {
-      fn();
-    } catch (err) {
-      // Keep the site usable even if one feature fails.
+    try { fn(); } catch (err) {
       console.warn(`[main] ${fnName} failed:`, err);
     }
   }
 
-  function boot() {
-    INIT_FNS.forEach(safeCall);
-  }
+  function boot() { INIT_FNS.forEach(safeCall); }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);
@@ -33,7 +26,16 @@
     boot();
   }
 
+  document.addEventListener('partials:loaded', () => {
+    ['initOverlay', 'initLightbox', 'initCarousel', 'initNews', 'initEmailReveal'].forEach(safeCall);
+  });
+
+  // ✅ 여기: window에 직접 등록 (이중 함수 X)
   window.initEmailReveal = function initEmailReveal() {
+    // 중복 등록 방지(페이지 내 여러 번 init 호출될 수 있어서)
+    if (window.__emailRevealBound) return;
+    window.__emailRevealBound = true;
+
     document.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.email-reveal[data-e]');
       if (!btn) return;
