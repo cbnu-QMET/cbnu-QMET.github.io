@@ -7,9 +7,9 @@
     'initLightbox',
     'initCarousel',
     'initNews',
+    'initMedia',
     'initEmailReveal',
   ];
-
   function safeCall(fnName) {
     const fn = window[fnName];
     if (typeof fn !== 'function') return;
