@@ -1,6 +1,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
+  padding-top: 100px;
   font-family:var(--font-sans);
   background:var(--color-bg);               /* 전체 배경 완전 블랙 */
   color:var(--color-text);
