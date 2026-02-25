@@ -1,6 +1,33 @@
 // menu.js (수정본)
 
 (function () {
+
+  function normalizePath(path) {
+    if (!path) return '/';
+    let normalized = path.replace(/\/index\.html$/i, '/');
+    normalized = normalized.replace(/\.html$/i, '');
+    if (normalized.length > 1) normalized = normalized.replace(/\/+$/, '');
+    return normalized || '/';
+  }
+
+  function applyCurrentNavState(nav) {
+    const currentPath = normalizePath(window.location.pathname);
+
+    nav.querySelectorAll('a[aria-current="page"]').forEach((link) => {
+      link.removeAttribute('aria-current');
+    });
+
+    nav.querySelectorAll('a[href]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('./')) return;
+
+      const linkPath = normalizePath(`/${href.slice(2)}`);
+      if (linkPath === currentPath) {
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
   function initMenu() {
     const header = document.querySelector('header');
     if (!header) return;
@@ -19,6 +46,7 @@
     };
 
     applyNavOffset();
+    applyCurrentNavState(nav);
     window.addEventListener('resize', applyNavOffset);
 
     const openMenu = () => {
@@ -64,4 +92,10 @@
   }
 
   window.initMenu = initMenu;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMenu);
+  } else {
+    initMenu();
+  }
 })();
