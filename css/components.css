@@ -322,3 +322,33 @@
   opacity:.04;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
+
+/* ===========================
+   Email Reveal Button
+   =========================== */
+
+.email-reveal {
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+  color: var(--color-text);
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, opacity .2s ease;
+}
+
+.email-reveal:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.email-reveal[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.email-out {
+  margin-left: 0.5rem;
+  user-select: text;
+}
