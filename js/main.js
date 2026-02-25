@@ -50,7 +50,7 @@
         out.textContent = email;
         out.dataset.revealed = '1';
         btn.disabled = true;
-        btn.textContent = '이메일 표시됨';
+        btn.textContent = 'e-mail';
       } catch (e) {}
     });
   };
