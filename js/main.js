@@ -50,7 +50,7 @@
         out.textContent = email;
         out.dataset.revealed = '1';
         btn.disabled = true;
-        btn.textContent = 'e-mail';
+        btn.textContent = 'E-mail';
       } catch (e) {}
     });
   };
