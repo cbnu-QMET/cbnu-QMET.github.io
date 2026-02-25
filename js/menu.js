@@ -1,18 +1,17 @@
-// menu.js
-// Mobile nav toggle. Safe to call on any page.
+// menu.js (수정본)
 
 (function () {
   function initMenu() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
     const header = document.querySelector('header');
-    if (!menuToggle || !nav || !header) return;
+    if (!header) return;
 
-    // Prevent duplicate binding if initMenu is called more than once.
+    const menuToggle = header.querySelector('.menu-toggle');
+    const nav = header.querySelector('nav');
+    if (!menuToggle || !nav) return;
+
     if (menuToggle.dataset.bound === '1') return;
     menuToggle.dataset.bound = '1';
 
-    // Apply nav offset so it starts below the fixed header (prevents overlap)
     const applyNavOffset = () => {
       const h = header.getBoundingClientRect().height;
       nav.style.setProperty('--header-h', `${h}px`);
@@ -33,6 +32,8 @@
       menuToggle.setAttribute('aria-expanded', 'false');
     };
 
+    menuToggle.setAttribute('aria-expanded', 'false');
+
     menuToggle.addEventListener('click', (e) => {
       e.preventDefault();
       applyNavOffset();
@@ -42,23 +43,20 @@
       menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    // Close mobile menu when clicking nav links
     nav.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => closeMenu());
+      link.addEventListener('click', closeMenu);
     });
 
-    // Close on outside click (when open)
     document.addEventListener('click', (e) => {
       if (!nav.classList.contains('mobile-open')) return;
       const target = e.target;
       if (!(target instanceof Element)) return;
 
-      const clickedInsideNav = nav.contains(target);
-      const clickedToggle = menuToggle.contains(target);
-      if (!clickedInsideNav && !clickedToggle) closeMenu();
+      if (!nav.contains(target) && !menuToggle.contains(target)) {
+        closeMenu();
+      }
     });
 
-    // Close on ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
