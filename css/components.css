@@ -326,29 +326,55 @@
 /* ===========================
    Email Reveal Button
    =========================== */
+/* ===========================
+   Email reveal (minimal)
+   =========================== */
 
-.email-reveal {
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.05);
-  color: var(--color-text);
-  font: inherit;
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background .2s ease, border-color .2s ease, opacity .2s ease;
+/* 버튼을 '작은 링크'처럼 보이게 */
+.email-reveal{
+  appearance:none;
+  background:transparent;
+  border:0;
+  padding:0;
+  margin:0;
+
+  font:inherit;
+  color:inherit;
+
+  cursor:pointer;
+  opacity:.75;
+  text-decoration:underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+
+  transition: opacity .2s ease;
 }
 
-.email-reveal:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: rgba(255,255,255,0.4);
+.email-reveal:hover{
+  opacity:1;
 }
 
-.email-reveal[disabled] {
-  opacity: 0.6;
-  cursor: default;
+.email-reveal:focus-visible{
+  outline:2px solid rgba(255,255,255,.35);
+  outline-offset:3px;
+  border-radius:6px;
 }
 
-.email-out {
-  margin-left: 0.5rem;
-  user-select: text;
+.email-reveal[disabled]{
+  cursor:default;
+  opacity:.55;
+  text-decoration:none;
+}
+
+/* 이메일 텍스트 */
+.email-out{
+  margin-left:.5rem;
+  opacity:.9;
+  user-select:text;
+  white-space:nowrap;
+}
+
+/* 모바일에서 줄바꿈 필요하면(선택)*/
+@media (max-width: 520px){
+  .email-out{ white-space:normal; overflow-wrap:anywhere; }
 }
