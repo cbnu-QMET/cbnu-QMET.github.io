@@ -7,8 +7,9 @@ header{
   justify-content:space-between;
   align-items:center;
 
-  /* 데스크탑에서만 스타일 유지 */
-  background:#00000099;
+  background:linear-gradient(180deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.66) 65%,rgba(8,8,8,0) 100%);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .logo{
@@ -28,10 +29,10 @@ nav a{
   font-weight:400;
   letter-spacing:.02em;
   color:var(--color-text);
-  transition:opacity .3s ease;
+  transition:opacity .3s ease,color .3s ease;
 }
-nav a:hover{opacity:.6}
-nav a[aria-current="page"]{opacity:.6; text-decoration:underline; text-underline-offset:.25em}
+nav a:hover{opacity:.85;color:#fff}
+nav a[aria-current="page"]{opacity:1; text-decoration:underline; text-underline-offset:.25em; text-decoration-thickness:1.5px}
 
 .header-toggle{
   font-size:.875rem;
@@ -179,6 +180,8 @@ footer{
   line-height:1.8;
   color:var(--color-text-muted);
 }
+.footer-location address a{transition:color .3s ease}
+.footer-location address a:hover{color:var(--color-text)}
 .footer-bottom{
   display:flex;
   justify-content:space-between;
@@ -207,10 +210,9 @@ footer{
   width:1px;height:40px;
   background:linear-gradient(to bottom,var(--color-text-muted),transparent);
 }
-/* Professor page (overlay-grid 영역)만 serif */
-.overlay-grid,
-.overlay-grid * {
+/* Professor page typography */
+.professor-content .overlay-grid,
+.professor-content .overlay-grid * {
   font-family: var(--font-serif);
 }
-
 
