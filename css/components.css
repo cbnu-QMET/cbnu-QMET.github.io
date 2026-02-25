@@ -374,6 +374,12 @@
   white-space:nowrap;
 }
 
+.form-status {
+  margin-top: .75rem;
+  font-size: .95rem;
+  opacity: .85;
+}
+
 /* 모바일에서 줄바꿈 필요하면(선택)*/
 @media (max-width: 520px){
   .email-out{ white-space:normal; overflow-wrap:anywhere; }

@@ -83,7 +83,7 @@
       </div>
 
       <!-- Contact Form -->
-      <form class="contact-form" onsubmit="sendMail(event)">
+      <form class="contact-form" onsubmit="handleContactSubmit(event)">
         <div class="form-group">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -107,6 +107,7 @@
         </div>
 
         <button type="submit" class="form-submit">Send Message</button>
+        <p class="form-status" id="contactStatus" aria-live="polite"></p>
       </form>
     </div>
   </main>
