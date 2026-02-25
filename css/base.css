@@ -2,7 +2,7 @@
 html{scroll-behavior:smooth}
 body{
   font-family:var(--font-sans);
-  background:#000;               /* 전체 배경 완전 블랙 */
+  background:var(--color-bg);               /* 전체 배경 완전 블랙 */
   color:var(--color-text);
   line-height:1.6;
   font-weight:300;
