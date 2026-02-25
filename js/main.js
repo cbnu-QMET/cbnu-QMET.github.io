@@ -1,57 +1,66 @@
-// main.js - entrypoint
+// menu.js (수정본)
+
 (function () {
-  const INIT_FNS = [
-    'initPartials',
-    'initMenu',
-    'initOverlay',
-    'initLightbox',
-    'initCarousel',
-    'initNews',
-    'initEmailReveal',
-  ];
+  function initMenu() {
+    const header = document.querySelector('header');
+    if (!header) return;
 
-  function safeCall(fnName) {
-    const fn = window[fnName];
-    if (typeof fn !== 'function') return;
-    try { fn(); } catch (err) {
-      console.warn(`[main] ${fnName} failed:`, err);
-    }
-  }
+    const menuToggle = header.querySelector('.menu-toggle');
+    const nav = header.querySelector('nav');
+    if (!menuToggle || !nav) return;
 
-  function boot() { INIT_FNS.forEach(safeCall); }
+    if (menuToggle.dataset.bound === '1') return;
+    menuToggle.dataset.bound = '1';
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else {
-    boot();
-  }
+    const applyNavOffset = () => {
+      const h = header.getBoundingClientRect().height;
+      nav.style.setProperty('--header-h', `${h}px`);
+    };
 
-  document.addEventListener('partials:loaded', () => {
-    ['initOverlay', 'initLightbox', 'initCarousel', 'initNews', 'initEmailReveal'].forEach(safeCall);
-  });
+    applyNavOffset();
+    window.addEventListener('resize', applyNavOffset);
 
-  // ✅ 여기: window에 직접 등록 (이중 함수 X)
-  window.initEmailReveal = function initEmailReveal() {
-    // 중복 등록 방지(페이지 내 여러 번 init 호출될 수 있어서)
-    if (window.__emailRevealBound) return;
-    window.__emailRevealBound = true;
+    const openMenu = () => {
+      nav.classList.add('mobile-open');
+      document.body.classList.add('no-scroll');
+      menuToggle.setAttribute('aria-expanded', 'true');
+    };
 
-    document.addEventListener('click', function (ev) {
-      const btn = ev.target.closest('.email-reveal[data-e]');
-      if (!btn) return;
+    const closeMenu = () => {
+      nav.classList.remove('mobile-open');
+      document.body.classList.remove('no-scroll');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
 
-      const out = btn.nextElementSibling;
-      if (!out || !out.classList.contains('email-out')) return;
+    menuToggle.setAttribute('aria-expanded', 'false');
 
-      if (out.dataset.revealed === '1') return;
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      applyNavOffset();
 
-      try {
-        const email = atob(btn.dataset.e);
-        out.textContent = email;
-        out.dataset.revealed = '1';
-        btn.disabled = true;
-        btn.textContent = 'E-mail';
-      } catch (e) {}
+      const isOpen = nav.classList.toggle('mobile-open');
+      document.body.classList.toggle('no-scroll', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
     });
-  };
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('mobile-open')) return;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
+
+      if (!nav.contains(target) && !menuToggle.contains(target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  window.initMenu = initMenu;
 })();
