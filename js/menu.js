@@ -32,9 +32,14 @@
     const header = document.querySelector('header');
     if (!header) return;
 
-    const menuToggle = header.querySelector('.menu-toggle');
     const nav = header.querySelector('nav');
-    if (!menuToggle || !nav) return;
+    if (!nav) return;
+
+    // Keep current-page state in sync even if a page layout omits mobile controls.
+    applyCurrentNavState(nav);
+
+    const menuToggle = header.querySelector('.menu-toggle');
+    if (!menuToggle) return;
 
     if (menuToggle.dataset.bound === '1') return;
     menuToggle.dataset.bound = '1';
@@ -46,14 +51,7 @@
     };
 
     applyNavOffset();
-    applyCurrentNavState(nav);
     window.addEventListener('resize', applyNavOffset);
-
-    const openMenu = () => {
-      nav.classList.add('mobile-open');
-      document.body.classList.add('no-scroll');
-      menuToggle.setAttribute('aria-expanded', 'true');
-    };
 
     const closeMenu = () => {
       nav.classList.remove('mobile-open');
@@ -92,10 +90,4 @@
   }
 
   window.initMenu = initMenu;
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMenu);
-  } else {
-    initMenu();
-  }
 })();
