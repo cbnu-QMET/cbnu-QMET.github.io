@@ -33,12 +33,7 @@
     boot();
   }
 
-  // If overlays are injected later (e.g., via partials), re-run feature init that may
-  // depend on dynamically added DOM.
-  document.addEventListener('partials:loaded', () => {
-    ['initOverlay', 'initLightbox', 'initCarousel', 'initNews'].forEach(safeCall);
-  });
-  function initEmailReveal() {
+  window.initEmailReveal = function initEmailReveal() {
     document.addEventListener('click', function (ev) {
       const btn = ev.target.closest('.email-reveal[data-e]');
       if (!btn) return;
@@ -56,5 +51,5 @@
         btn.textContent = '이메일 표시됨';
       } catch (e) {}
     });
-  }
+  };
 })();
