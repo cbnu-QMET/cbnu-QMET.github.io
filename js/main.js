@@ -34,6 +34,9 @@
 
   // If overlays are injected later (e.g., via partials), re-run feature init that may
   // depend on dynamically added DOM.
+  document.addEventListener('partials:loaded', () => {
+    ['initOverlay', 'initLightbox', 'initCarousel', 'initNews'].forEach(safeCall);
+  });
   document.addEventListener('click', function (ev) {
     const btn = ev.target.closest('.email-reveal[data-e]');
     if (!btn) return;
