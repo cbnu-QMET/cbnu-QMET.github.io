@@ -3,7 +3,6 @@
   const INIT_FNS = [
     'initPartials',
     'initMenu',
-    'initOverlay',
     'initLightbox',
     'initCarousel',
     'initNews',
@@ -27,7 +26,7 @@
   }
 
   document.addEventListener('partials:loaded', () => {
-    ['initOverlay', 'initLightbox', 'initCarousel', 'initNews', 'initEmailReveal'].forEach(safeCall);
+    ['initLightbox', 'initCarousel', 'initNews', 'initEmailReveal'].forEach(safeCall);
   });
 
   window.initEmailReveal = function initEmailReveal() {
