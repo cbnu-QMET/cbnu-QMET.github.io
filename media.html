@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<title>QMET – Media</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-<link href="css/variables.css" rel="stylesheet"/>
-<link href="css/base.css" rel="stylesheet"/>
-<link href="css/layout.css" rel="stylesheet"/>
-<link href="css/components.css" rel="stylesheet"/>
-<link href="css/overlay.css" rel="stylesheet"/>
-<link href="css/responsive.css" rel="stylesheet"/>
-<link href="css/media.css" rel="stylesheet"/>
-</head>
-<body>
-<div class="grain"></div>
-<header>
-<a class="logo" href="./">QMET</a>
-<nav>
-<a href="./about">About</a>
-<a href="./professor">Professor</a>
-<a href="./team">Members</a>
-<a href="./publications">Publication</a>
-<a href="./activity">Activity</a>
-<a href="./media">Media</a>
-<a href="./research">Research</a>
-</nav>
-<button aria-label="Toggle menu" class="menu-toggle">Menu</button>
-</header>
-<main id="page-root" style="padding: 8rem 3rem 4rem; max-width: 1200px; margin: 0 auto;">
-<div class="overlay-header">
-<h1 class="overlay-title"><em>Media</em></h1>
-<p class="overlay-subtitle">
-        Press coverage, video features, and YouTube content related to our research and outreach.
-      </p>
-</div>
-<!-- Toolbar -->
-<div aria-label="Media controls" class="media-toolbar">
-<div aria-label="Filters" class="media-filters" role="tablist">
-<div aria-selected="true" class="chip active" data-filter="all" role="tab">All</div>
-<div aria-selected="false" class="chip" data-filter="news" role="tab">News</div>
-<div aria-selected="false" class="chip" data-filter="youtube" role="tab">YouTube</div>
-<div aria-selected="false" class="chip" data-filter="video" role="tab">News Video</div>
-</div>
-<div class="media-search">
-<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
-<circle cx="11" cy="11" r="7"></circle>
-<path d="M21 21l-4.3-4.3"></path>
-</svg>
-<input aria-label="Search media" id="mediaSearch" placeholder="Search title, outlet, keywords..." type="search"/>
-</div>
-<div class="media-sort">
-<select aria-label="Sort media" id="mediaSort">
-<option value="date_desc">Newest</option>
-<option value="date_asc">Oldest</option>
-<option value="title_asc">Title A–Z</option>
-</select>
-</div>
-</div>
-<!-- List -->
-<div class="media-list" id="mediaList"><!-- Cards will be rendered from data/media.json by js/media.js --></div>
-<nav aria-label="Media pagination" class="pagination">
-<button aria-label="Previous page" class="page-btn" id="pagePrev" type="button">Prev</button>
-<div aria-label="Page numbers" class="page-numbers" id="pageNumbers"></div>
-<button aria-label="Next page" class="page-btn" id="pageNext" type="button">Next</button>
-</nav>
-</main>
-<script src="js/menu.js"></script>
-<script src="js/media.js"></script>
-<script src="js/lightbox.js"></script>
-<script src="js/main.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>QMET – Media</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="css/variables.css" rel="stylesheet"/>
+    <link href="css/base.css" rel="stylesheet"/>
+    <link href="css/layout.css" rel="stylesheet"/>
+    <link href="css/components.css" rel="stylesheet"/>
+    <link href="css/overlay.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+    <link href="css/media.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header>
+      <a class="logo" href="./">QMET</a>
+      <nav>
+        <a href="./about">About</a>
+        <a href="./professor">Professor</a>
+        <a href="./team">Members</a>
+        <a href="./publications">Publications</a>
+        <a href="./activity">Activity</a>
+        <a aria-current="page" href="./media">Media</a>
+        <a href="./research">Research</a>
+      </nav>
+      <button aria-label="Toggle menu" class="menu-toggle">Menu</button>
+    </header>
+    <main id="page-root" style="padding: 8rem 3rem 4rem; max-width: 1200px; margin: 0 auto;">
+      <div class="overlay-header">
+        <h1 class="overlay-title"><em>Media</em></h1>
+        <p class="overlay-subtitle">
+                Press coverage, video features, and YouTube content related to our research and outreach.
+              </p>
+      </div>
+      <!-- Toolbar -->
+      <div aria-label="Media controls" class="media-toolbar">
+        <div aria-label="Filters" class="media-filters" role="tablist">
+          <div aria-selected="true" class="chip active" data-filter="all" role="tab">All</div>
+          <div aria-selected="false" class="chip" data-filter="news" role="tab">News</div>
+          <div aria-selected="false" class="chip" data-filter="youtube" role="tab">YouTube</div>
+          <div aria-selected="false" class="chip" data-filter="video" role="tab">News Video</div>
+        </div>
+        <div class="media-search">
+          <svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M21 21l-4.3-4.3"></path>
+          </svg>
+          <input aria-label="Search media" id="mediaSearch" placeholder="Search title, outlet, keywords..." type="search"/>
+        </div>
+        <div class="media-sort">
+          <select aria-label="Sort media" id="mediaSort">
+            <option value="date_desc">Newest</option>
+            <option value="date_asc">Oldest</option>
+            <option value="title_asc">Title A–Z</option>
+          </select>
+        </div>
+      </div>
+      <!-- List -->
+      <div class="media-list" id="mediaList"><!-- Cards will be rendered from data/media.json by js/media.js --></div>
+      <nav aria-label="Media pagination" class="pagination">
+        <button aria-label="Previous page" class="page-btn" id="pagePrev" type="button">Prev</button>
+        <div aria-label="Page numbers" class="page-numbers" id="pageNumbers"></div>
+        <button aria-label="Next page" class="page-btn" id="pageNext" type="button">Next</button>
+      </nav>
+    </main>
+    <script src="js/menu.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/lightbox.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
