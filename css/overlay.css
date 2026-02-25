@@ -1,0 +1,170 @@
+/* OVERLAY BASE STYLES  */
+/* ==================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow-y: auto;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay-close {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  z-index: 201;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-close:hover {
+  opacity: 0.6;
+}
+
+.overlay-close svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ✅ 페이지(standalone)에서도 그대로 쓸 수 있도록 기본값은 "보이게" */
+.overlay-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 3rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ✅ 오버레이 안에서만 fade/slide 애니메이션을 적용 */
+.overlay .overlay-content {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+.overlay.active .overlay-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.overlay-header {
+  margin-bottom: 4rem;
+}
+
+.overlay-title {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.overlay-title em {
+  font-style: italic;
+}
+
+.overlay-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.overlay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  margin-top: 2rem;
+}
+
+.overlay-grid.single-column {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+}
+
+.overlay-section {
+  margin-bottom: 3rem;
+}
+
+.overlay-section h3 {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--color-text-muted);
+}
+
+.overlay-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.overlay-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overlay-section li {
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--color-text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.overlay-section li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+/* Professor Photo Styles */
+.professor-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.professor-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.professor-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.professor-header-text {
+  flex: 1;
+}
