@@ -37,4 +37,38 @@
   document.addEventListener('partials:loaded', () => {
     ['initOverlay', 'initLightbox', 'initCarousel', 'initNews'].forEach(safeCall);
   });
+  
+  // Email obfuscation: render addresses from data-u/data-d, and open mail client on click.
+  // Keeps raw email + mailto out of HTML to reduce scraping by simple bots.
+  window.initEmails = function initEmails() {
+    const nodes = document.querySelectorAll('.email[data-u][data-d]');
+    if (!nodes.length) return;
+
+    nodes.forEach((el) => {
+      const u = el.getAttribute('data-u');
+      const d = el.getAttribute('data-d');
+      if (!u || !d) return;
+
+      const addr = `${u}@${d}`;
+
+      // Display text (human-friendly). If you want heavier obfuscation, switch to `${u} [at] ${d}`.
+      el.textContent = addr;
+      el.setAttribute('role', 'link');
+      el.setAttribute('tabindex', '0');
+      el.style.cursor = 'pointer';
+
+      const openMail = () => {
+        // Create mailto only at interaction time.
+        window.location.href = `mailto:${addr}`;
+      };
+
+      el.addEventListener('click', openMail, { passive: true });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openMail();
+        }
+      });
+    });
+  };
 })();
