@@ -9,6 +9,7 @@
     'initLightbox',
     'initCarousel',
     'initNews',
+    'initEmailReveal', 
   ];
 
   function safeCall(fnName) {
@@ -37,21 +38,23 @@
   document.addEventListener('partials:loaded', () => {
     ['initOverlay', 'initLightbox', 'initCarousel', 'initNews'].forEach(safeCall);
   });
-  document.addEventListener('click', function (ev) {
-    const btn = ev.target.closest('.email-reveal[data-e]');
-    if (!btn) return;
+  function initEmailReveal() {
+    document.addEventListener('click', function (ev) {
+      const btn = ev.target.closest('.email-reveal[data-e]');
+      if (!btn) return;
 
-    const out = btn.nextElementSibling;
-    if (!out || !out.classList.contains('email-out')) return;
+      const out = btn.nextElementSibling;
+      if (!out || !out.classList.contains('email-out')) return;
 
-    if (out.dataset.revealed === '1') return;
+      if (out.dataset.revealed === '1') return;
 
-    try {
-      const email = atob(btn.dataset.e);
-      out.textContent = email;
-      out.dataset.revealed = '1';
-      btn.disabled = true;
-      btn.textContent = '이메일 표시됨';
-    } catch (e) {}
-  });
+      try {
+        const email = atob(btn.dataset.e);
+        out.textContent = email;
+        out.dataset.revealed = '1';
+        btn.disabled = true;
+        btn.textContent = '이메일 표시됨';
+      } catch (e) {}
+    });
+  }
 })();
