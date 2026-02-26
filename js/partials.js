@@ -1,5 +1,5 @@
 (function () {
-  const NAV_LINKS = [
+  const DEFAULT_NAV_LINKS = [
     { href: './about', label: 'About' },
     { href: './professor', label: 'Professor' },
     { href: './team', label: 'Members' },
@@ -8,6 +8,13 @@
     { href: './media', label: 'Media' },
     { href: './research', label: 'Research' },
   ];
+
+  function getNavLinks() {
+    if (Array.isArray(window.QMET_NAV_LINKS) && window.QMET_NAV_LINKS.length > 0) {
+      return window.QMET_NAV_LINKS;
+    }
+    return DEFAULT_NAV_LINKS;
+  }
 
   function normalizePath(pathname) {
     const cleaned = pathname.replace(/index\.html$/i, '').replace(/\.html$/i, '').replace(/\/$/, '');
@@ -23,7 +30,7 @@
 
     const currentPath = normalizePath(window.location.pathname);
 
-    nav.innerHTML = NAV_LINKS.map(({ href, label }) => {
+    nav.innerHTML = getNavLinks().map(({ href, label }) => {
       const targetPath = normalizePath(new URL(href, window.location.href).pathname);
       const isActive = targetPath === currentPath;
       const activeAttr = isActive ? ' aria-current="page"' : '';
